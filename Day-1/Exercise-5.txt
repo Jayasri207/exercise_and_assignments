@@ -1,0 +1,24 @@
+Exercise-5
+
+1) Deploy Container with network port mapping
+
+   $ docker run -it -p 8080:80 nginx:latest
+
+2) Validate service availability on node-port
+
+   --> access http://localhost:8080 and validate web-service / application accessible on port 8080.
+
+3) Docker image tagging
+
+   $ docker tag <image-id>  <new-image-name>
+
+4) Validate Network communication between containers in docker network
+
+   $ docker run -it ubuntu:latest
+
+   --> curl <web-server-container-ip-address>:port-number
+
+5) Explore container logs
+
+   $ docker logs --details <container-id>
+
