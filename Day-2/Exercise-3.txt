@@ -7,10 +7,10 @@ Example: sample dockerfile for Apache webserver
 
 $ nano Dockerfile
 
-  FROM ubuntu:latest
-  RUN apt-get update -y
-  RUN apt-get install apache2 -y
-  RUN apt-get install curl -y
+  FROM ubuntu:18.04
+  RUN apt update -y
+  RUN apt install apache2 -y
+  RUN apt install curl -y
   COPY ./index.html /var/www/html/
   EXPOSE 80
   CMD ["apachectl", "-D", "FOREGROUND"]
