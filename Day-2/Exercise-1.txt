@@ -1,9 +1,25 @@
-Exercise-4
+Exercise-1
 
-1) Deploying docker container with volume mount
+1) Deploy Container with network port mapping
 
-   $ docker run -it -v /data:/data ubuntu:latest
+   $ docker run -it -p 8080:80 httpd:latest
 
-2) copy files to the /data directory on Docker Host and validate file avaibility inside the container
+2) Validate service availability on node-port
 
-3) Create file inside container in /data folder. validate file avaibility outside  on docker host in /data folder.
+   --> access http://localhost:8080 and validate web-service / application accessible on port 8080.
+
+3) Validate Network on Docker Host
+
+   $ sudo docker network ls
+
+4) create a custom network
+
+   $ sudo docker network create -d bridge mynetwork
+
+5) create container within custom network
+
+   $ sudo docker --dt --net=mynetwork --name=mycontainer ubuntu:20.04 
+
+
+
+
