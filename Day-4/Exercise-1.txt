@@ -1,17 +1,50 @@
-Exercise -4
+Exercise-3
+1) kubectl commands to deploy resources imperatively.
 
-1) expose / browse applicatin /service inside cotnainer using service resource
+  $ kubectl run webserver --image=httpd:latest 
+2) create ReplicationController object with manifest file
 
-   $ kubectl expose deployment webserver --port=80 --target-port=80 --type=NodePort --dry-run=client -o yaml > service.yml
+  a) create a file as rc.yml
+  b) copy the below contents,
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: hello-apache-rc
+spec:
+  replicas: 5
+  selector:
+    app: hello-apache
+  template:
+    metadata:
+      labels:
+        app: hello-apache
+    spec:
+      containers:
+      - name: hello-apache-pod
+        image: httpd:latest
+        ports:
+        - containerPort: 80
 
-2) 1) validate replication controller and replica set resource differences.
+$ kubectl create -f rc.yml
 
-   $ kubectl describe <replicatin controller id>
-   $ kubectl describe <replica set id>
+3) deploy deployment object imperatively...
 
-2) make changes to deployment.yml file in image / replicas / label  and validate by deploying the resource.
+$ kubectl create deployment webserver-deploy --image=httpd:2.4.57 --replicas=2 --dry-run=client -o yaml > deployment.yml
 
-  $ kubectl create -f deployment.yml
-  $ kubectl apply -f deployment.yml
+$ kubectl create -f deployment.yml 
+
+4) Explore  / edit manifest file
+  
+  $ kubectl edit deployment/webserver-deploy
+  
+5) deploy resources declaratively
+   $ kubectl create -f pod.yml
+   $ kubectl apply -f pod.yml
+
+   $ kubectl create -f deployment.yml
+   $ kubectl apply -f deployment.yml
+
+6) validate manifest changes
+   $ kubectl diff -f pod.yml
 
 
