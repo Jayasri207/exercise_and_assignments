@@ -2,6 +2,14 @@ Exercise-3
 1) kubectl commands to deploy resources imperatively.
 
   $ kubectl run webserver --image=httpd:latest 
+  # kubectl delete pod/webserver
+  $ kubectl run webserver --image=httpd:latest --dry-run=client -o yaml > pod.yaml
+
+  $ kubectl create -f pod.yaml
+  $ nano pod.yaml
+  #  make changes to Label, and image to httpd:2.4.57
+  $ kubectl apply -f pod.yaml
+
 2) create ReplicationController object with manifest file
 
   a) create a file as rc.yml
