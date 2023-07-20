@@ -1,0 +1,26 @@
+1) Rollout deployment
+
+   # deploy a deployment resource.
+   # check the status and manage deployment
+   $ kubectl rollout status deployment <deployment-name>
+
+   $ kubectl rollout pause deployment <deployment-name>
+   $ kubectl rollout resume deployment <deployment-name>
+
+   $ kubectl rollout history deployment <deployment-name> 
+2) Validate annotation and revisions
+
+   check annotations version
+
+   $ kubectl describe deployment <deployment-name>
+3) Rollback deployment
+
+   $ kubectl rollout history deployment <deployment-name>
+
+   # rollback to last deployment
+
+   $ kubectl rollout undo deployment <deployment-name> 
+
+   # rollback to particular version
+
+   $ kubectl rollout undo deployment <deployment-name> --to-revision=2  
