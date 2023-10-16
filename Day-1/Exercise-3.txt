@@ -15,7 +15,7 @@ Exercise-3
 2) validate docker image structure 
 
    $ docker history <image-id>
-3) crete a container from custom image
+3) create a container from custom image
 
    $ docker run -it --name webserver <image id>
 
