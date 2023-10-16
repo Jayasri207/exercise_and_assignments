@@ -29,3 +29,11 @@ Exercise-3
 
 3) Note the docker intermediate container and image layer structure
 4) note the read-only and writable layers in container structure
+
+## create a new network on Docker host
+
+$ sudo docker network create -d bridge newapp_interface
+$ sudo docker run -dt --net=newapp_interface --name=webapp_container ubuntu:latest
+##validate the container specifications
+
+$ sudo docker inspect webapp_container
