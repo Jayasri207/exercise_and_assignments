@@ -1,11 +1,13 @@
 Exercise-3
 
 1) create a container
-   $ docker run -it --name webserver ubutnu:latest
+   $ docker run -it --name webserver ubuntu:latest
 
-    $ root@kj923239# apt install apache2 curl
-    $ root@kj923239# apt update
-    $ root@kj923239# exit
+   ## inside container environment, run below commands
+
+   $ apt install apache2 curl
+   $ apt update
+   $ exit
 1) create docker image from a running / existing container
 
    $ docker ps -a
