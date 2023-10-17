@@ -4,6 +4,9 @@ Exercise-1
 
    $ sudo docker run -it -p 8000:80 ganeshhp/webserver:latest
 
+   $ service apache2 start
+   $ service apache2 status
+
 2) Validate service availability on node-port
 
    --> access http://localhost:8080 and validate web-service / application accessible on port 8080.
