@@ -2,7 +2,7 @@ Exercise-1
 
 1) Deploy Container with network port mapping
 
-   $ docker run -it -p 8080:80 httpd:latest
+   $ sudo docker run -it -p 8080:80 httpd:latest
 
 2) Validate service availability on node-port
 
