@@ -9,7 +9,7 @@ Exercise-1
 
 2) Validate service availability on node-port
 
-   --> access http://localhost:8080 and validate web-service / application accessible on port 8080.
+   --> access http://localhost:8000 and validate web-service / application accessible on port 8000.
 
 3) Validate Network on Docker Host
 
