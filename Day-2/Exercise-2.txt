@@ -2,7 +2,7 @@ Exercise-2
 
 1) Deploying docker container with volume mount
 
-   $ docker run -it -v /data:/data ubuntu:latest
+   $ docker run -it -p 8000:80 -v /data:/var/www/html --name webserver ganeshhp/webserver:latest
 
 2) copy files to the /data directory on Docker Host and validate file avaibility inside the container
 
