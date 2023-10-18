@@ -42,7 +42,7 @@ $ sudo kubectl explain
 
   $ sudo kubectl describe node <nodename>
 
-  $ sudo kubectl run webserver --image=ganeshhp/apache2:07042023
+  $ sudo kubectl run webserver --image=httpd:latest
 
   $ sudo kubectl get pods
 
