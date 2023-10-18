@@ -66,4 +66,28 @@ $ sudo kubectl get pod/webapp -o yaml
 
 ## observer the changes
 
+### create repicatin controller object using yaml file.
+
+$ nano rc.yml
+
+apiVersion: v1
+kind: ReplicationController
+metadata:
+   name: webserver-rc
+spec:
+   replicas: 3
+   selector:
+     app: webapp
+   template:
+     metadata:
+       labels:
+         app: webapp
+     spec:
+       containers:
+       - name: webapp
+         image: httpd:2.4.57
+         ports:
+         - containerPort: 8080
+
+## save and exit
 
