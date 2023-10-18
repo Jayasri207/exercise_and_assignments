@@ -20,6 +20,7 @@ $ sudo kubectl get
 $ sudo kubectl apply
 $ sudo kubectl describe
 $ sudo kubectl create
+
 $ sudo kubectl explain
  
 
@@ -47,3 +48,22 @@ $ sudo kubectl explain
   $ sudo kubectl get pods
 
   $ sudo kubectl describe pods
+
+## create POD objeccts using imperative command.
+
+$ sudo kubectl run webapp --image=httpd:latest --dry-run=client -o yaml
+
+$ sudo kubectl run webapp --image=httpd:latest --dry-run=server -o yaml > pod.yml
+
+$ vi pod.yml
+## make changes to the image information side the pod.yml
+## set the image value to httpd:2.4.57
+## save and exit
+
+$ sudo kubectl apply -f pod.yml
+
+$ sudo kubectl get pod/webapp -o yaml
+
+## observer the changes
+
+
