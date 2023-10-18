@@ -2,7 +2,7 @@
 Exercise-1
 ## First let's initiate the Kubenetes cluster.
 ## Using Minikube , we will initiate a single node cluster.
-
+$ sudo minikube status
 $ sudo minikube start --driver=docker --force
 
 ## wait for the cluster to start
