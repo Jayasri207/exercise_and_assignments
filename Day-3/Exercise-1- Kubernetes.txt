@@ -16,11 +16,11 @@ $ sudo kubectl config
 
 2) Explore kubectl command options.
 
-$ kubectl get
-$ kubectl apply
-$ kubectl describe
-$ kubectl create
-$ kubectl explain
+$ sudo kubectl get
+$ sudo kubectl apply
+$ sudo kubectl describe
+$ sudo kubectl create
+$ sudo kubectl explain
  
 
 3) validate kubeconfig file and kubectl config command options.
@@ -28,22 +28,22 @@ $ kubectl explain
 
 4) kubectl commands to query cluster components and deploy PODs
 
-  $ kubectl cluster-info
+  $ sudo kubectl cluster-info
 
-  $ kubectl config get-contexts
+  $ sudo kubectl config get-contexts
 
-  $ kubectl api-resources
+  $ sudo kubectl api-resources
 
-  $ kubectl api-resources --namespaced=true / false
+  $ sudo kubectl api-resources --namespaced=true / false
 
-  $ kubectl explain pod | more
+  $ sudo kubectl explain pod | more
 
-  $ kubectl get nodes
+  $ sudo kubectl get nodes
 
-  $ kubectl describe node <nodename>
+  $ sudo kubectl describe node <nodename>
 
-  $ kubectl run webserver --image=ganeshhp/apache2:07042023
+  $ sudo kubectl run webserver --image=ganeshhp/apache2:07042023
 
-  $ kubectl get pods
+  $ sudo kubectl get pods
 
-  $ kubectl describe pods
+  $ sudo kubectl describe pods
