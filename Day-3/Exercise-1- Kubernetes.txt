@@ -1,25 +1,49 @@
 
-Exercise-2
+Exercise-1
+## First let's initiate the Kubenetes cluster.
+## Using Minikube , we will initiate a single node cluster.
 
-1) Explore kubectl command options.
-   kubectl get
-   kubectl apply
-   kubectl describe
-   kubectl create
-   kubectl explain
+$ sudo minikube start --driver=docker --force
+
+## wait for the cluster to start
+1) explore the Kube cluster.
+
+## config command gives us most of the information abt the k8s cluster.
+
+$ sudo kubectl config  
+
+## understand the config command options. 
+
+2) Explore kubectl command options.
+
+$ kubectl get
+$ kubectl apply
+$ kubectl describe
+$ kubectl create
+$ kubectl explain
  
 
-2) validate kubeconfig file file and kubectl config command options.
+3) validate kubeconfig file and kubectl config command options.
    ~/.kube/config
 
-3) kubectl commands to query cluster components and deploy PODs
+4) kubectl commands to query cluster components and deploy PODs
+
   $ kubectl cluster-info
+
   $ kubectl config get-contexts
+
   $ kubectl api-resources
+
   $ kubectl api-resources --namespaced=true / false
+
   $ kubectl explain pod | more
+
   $ kubectl get nodes
+
   $ kubectl describe node <nodename>
+
   $ kubectl run webserver --image=ganeshhp/apache2:07042023
+
   $ kubectl get pods
+
   $ kubectl describe pods
