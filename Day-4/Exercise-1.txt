@@ -41,11 +41,11 @@ spec:
         ports:
         - containerPort: 80
 
-$ kubectl create -f rc.yml
+$ sudo kubectl create -f rc.yml
 
 3) deploy deployment object imperatively...
 
-$ kubectl create deployment webserver-deploy --image=httpd:2.4.57 --replicas=2 --dry-run=client -o yaml > deployment.yml
+$ sudo kubectl create deployment webserver-deploy --image=httpd:2.4.57 --replicas=2 --dry-run=client -o yaml > deployment.yml
 
 $ kubectl create -f deployment.yml 
 
