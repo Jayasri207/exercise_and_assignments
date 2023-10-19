@@ -49,11 +49,13 @@ $ sudo kubectl create deployment webserver-deploy --image=httpd:2.4.57 --replica
 
 ## edit the newly created file and add the Strategu declaration in the deployment object.
 
+minReadySeconds: 10
 strategy:
     type: RollingUpdate
     rollingUpdate:
       maxUnavailable: 1
       maxSurge: 1
+
 ## save and exit and deploy the object.
 
 $ kubectl create -f deployment.yml 
