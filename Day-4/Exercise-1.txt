@@ -2,8 +2,15 @@ Exercise-3
 1) kubectl commands to deploy resources imperatively.
 
   $ kubectl run webserver --image=httpd:latest 
-  # kubectl delete pod/webserver
-  $ kubectl run webserver --image=httpd:latest --dry-run=client -o yaml > pod.yaml
+## describe the POD with describe command option
+  $ sudo kubectl describe pod/webserver
+  $ sudo kubectl edit pod/webserver
+## make changes the image value and set it to httpd:2.4.57
+## save the file and redescribe
+  $ sudo kubectl describe pod/webserver
+
+  $ sudo kubectl delete pod/webserver
+  $ sudo kubectl run webserver --image=httpd:latest --dry-run=client -o yaml > pod.yaml
 
   $ kubectl create -f pod.yaml
   $ nano pod.yaml
